@@ -1,3 +1,13 @@
+terraform {
+  required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = ">= 3.0"
+    }
+  }
+  required_version = ">= 1.0"
+}
+
 resource "aws_cloudformation_stack" "oe_patterns_mastodon" {
   name = var.stack_name
 
@@ -15,6 +25,7 @@ resource "aws_cloudformation_stack" "oe_patterns_mastodon" {
     DbBackupRetentionPeriod                  = var.db_backup_retention_period
     DbInstanceClass                          = var.db_instance_class
     DbSecretArn                              = var.db_secret_arn
+    DbSnapshotIdentifier                     = var.db_snapshot_identifier
     DnsHostname                              = var.dns_hostname
     DnsRoute53HostedZoneName                 = var.dns_route53_hosted_zone_name
     Name                                     = var.name
