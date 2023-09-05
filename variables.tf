@@ -1,14 +1,17 @@
 variable "stack_name" {
+  type        = string
   description = "Name of the CloudFormation stack"
   default     = "oe_patterns_mastodon"
 }
 
-variable "VpcId" {
+variable "vpc_id" {
+  type        = string
   description = "Optional: Specify the VPC ID. If not specified, a VPC will be created."
   default     = ""
 }
 
 variable "vpc_cidr" {
+  type        = string
   default     = "10.0.0.0/16"
   description = "Optional: VPC IPv4 CIDR block if no VPC provided."
 }
