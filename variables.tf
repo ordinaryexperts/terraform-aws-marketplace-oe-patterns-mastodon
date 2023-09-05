@@ -90,10 +90,6 @@ variable "dns_hostname" {
   type        = string
   default     = ""
   description = "Optional: The hostname to access the service."
-  validation {
-    condition     = can(regex("^(?!.*/).*$", var.dns_hostname))
-    error_message = "Hostname should not have any forward slashes."
-  }
 }
 
 variable "assets_bucket_name" {
