@@ -13,6 +13,8 @@ resource "aws_cloudformation_stack" "oe_patterns_mastodon" {
 
   template_url = "https://s3.amazonaws.com/awsmp-fulfillment-cf-templates-prod/d0a98067-9a26-440a-858e-00193a953934/62eb05e0-b3f5-4538-8e7d-9ca970e699e1.template"
 
+  capabilities = ["CAPABILITY_NAMED_IAM"]
+
   parameters = {
     AlbCertificateArn                        = var.alb_certificate_arn
     AlbIngressCidr                           = var.alb_ingress_cidr
