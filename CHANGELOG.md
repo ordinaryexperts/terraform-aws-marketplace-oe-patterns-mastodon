@@ -1,5 +1,9 @@
 # Unreleased
 
+# 0.1.3
+
+* Using bool type for variables
+
 # 0.1.2
 
 * Fixing IAM capabilities error
