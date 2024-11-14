@@ -1,7 +1,7 @@
 variable "stack_name" {
   type        = string
   description = "Name of the CloudFormation stack"
-  default     = "oe_patterns_mastodon"
+  default     = "oe-patterns-mastodon"
 }
 
 variable "vpc_id" {
@@ -100,6 +100,12 @@ variable "ses_create_domain_identity" {
   description = "Optional: If 'true', a SES Domain Identity will be created from the hosted zone."
 }
 
+variable "ses_instance_user_access_key_serial" {
+  type        = string
+  default     = "1"
+  description = "Optional: Incrementing this integer value will trigger a rotation."
+}
+
 variable "db_secret_arn" {
   type        = string
   default     = ""
@@ -143,6 +149,12 @@ variable "asg_instance_type" {
   description = "Required: The EC2 instance type for the application Auto Scaling Group."
   type        = string
   default     = "t3.small"
+}
+
+variable "asg_key_name" {
+  description = "Optional: The EC2 key pair name for the instance."
+  type        = string
+  default     = ""
 }
 
 variable "asg_reprovision_string" {
