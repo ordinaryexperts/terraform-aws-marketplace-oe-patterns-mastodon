@@ -11,15 +11,22 @@ terraform {
 resource "aws_cloudformation_stack" "oe_patterns_mastodon" {
   name = var.stack_name
 
-  template_url = "https://s3.amazonaws.com/awsmp-fulfillment-cf-templates-prod/d0a98067-9a26-440a-858e-00193a953934/62eb05e0-b3f5-4538-8e7d-9ca970e699e1.template"
+  template_url = "https://s3.amazonaws.com/awsmp-fulfillment-cf-templates-prod/d0a98067-9a26-440a-858e-00193a953934/3d2a4601d523496687e522acdcc4b774.template"
 
   capabilities = ["CAPABILITY_NAMED_IAM"]
+
+  # timeouts
+  timeout_in_minutes = 120
+  timeouts {
+    create = "120m"
+  }
 
   parameters = {
     AlbCertificateArn                        = var.alb_certificate_arn
     AlbIngressCidr                           = var.alb_ingress_cidr
     AsgDesiredCapacity                       = var.asg_desired_capacity
     AsgInstanceType                          = var.asg_instance_type
+    AsgKeyName                               = var.asg_key_name
     AsgMaxSize                               = var.asg_max_size
     AsgMinSize                               = var.asg_min_size
     AsgReprovisionString                     = var.asg_reprovision_string
@@ -37,6 +44,7 @@ resource "aws_cloudformation_stack" "oe_patterns_mastodon" {
     RedisClusterCacheNodeType                = var.redis_cluster_cache_node_type
     RedisClusterNumCacheNodes                = var.redis_cluster_num_cache_nodes
     SesCreateDomainIdentity                  = var.ses_create_domain_identity
+    SesInstanceUserAccessKeySerial           = var.ses_instance_user_access_key_serial
     VpcCidr                                  = var.vpc_cidr
     VpcId                                    = var.vpc_id
     VpcNatGatewayPerSubnet                   = var.vpc_nat_gateway_per_subnet

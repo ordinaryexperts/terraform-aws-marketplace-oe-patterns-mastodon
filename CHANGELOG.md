@@ -1,5 +1,10 @@
 # Unreleased
 
+# 2.1.0
+
+* Upgrading to OE Mastodon Pattern 2.1.0 (Mastodon version 4.3.1)
+* Adding test and GitHub actions
+
 # 0.1.3
 
 * Using bool type for variables
