@@ -16,6 +16,9 @@ run "provision_mastodon" {
     alb_ingress_cidr = "0.0.0.0/0"
     dns_hostname = "${run.setup_tests.stack_prefix}-mastodon-test.test.patterns.ordinaryexperts.com"
     dns_route53_hosted_zone_name = "test.patterns.ordinaryexperts.com"
+    # role already exists in test account
+    open_search_service_create_service_linked_role = false
+    # domain identity already exists in test account
     ses_create_domain_identity = false
     stack_name = "${run.setup_tests.stack_prefix}-mastodon-test"
   }
