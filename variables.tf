@@ -145,6 +145,12 @@ variable "open_search_service_create_service_linked_role" {
   description = "Whether or not to create a Service Linked Role for OpenSearch VPC access."
 }
 
+variable "asg_disk_usage_alarm_threshold" {
+  description = "Required: The alarm threshold for disk usage percentage."
+  default     = 80
+  type        = number
+}
+
 variable "asg_instance_type" {
   description = "Required: The EC2 instance type for the application Auto Scaling Group."
   type        = string
