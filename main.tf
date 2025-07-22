@@ -11,7 +11,7 @@ terraform {
 resource "aws_cloudformation_stack" "oe_patterns_mastodon" {
   name = var.stack_name
 
-  template_url = "https://s3.amazonaws.com/awsmp-fulfillment-cf-templates-prod/d0a98067-9a26-440a-858e-00193a953934/3d2a4601d523496687e522acdcc4b774.template"
+  template_url = "https://awsmp-cft-992382380361-1708727387563.s3.us-east-1.amazonaws.com/d7f9a3ad-774a-4938-b294-d3fb8cb4078c/d7f9a3ad-774a-4938-b294-d3fb8cb4078c/d0a98067-9a26-440a-858e-00193a953934/8d735b22-2789-4c78-b2e2-e426f6b93b40/template.yaml"
 
   capabilities = ["CAPABILITY_NAMED_IAM"]
 
@@ -25,6 +25,7 @@ resource "aws_cloudformation_stack" "oe_patterns_mastodon" {
     AlbCertificateArn                        = var.alb_certificate_arn
     AlbIngressCidr                           = var.alb_ingress_cidr
     AsgDesiredCapacity                       = var.asg_desired_capacity
+    AsgDiskUsageAlarmThreshold               = var.asg_disk_usage_alarm_threshold
     AsgInstanceType                          = var.asg_instance_type
     AsgKeyName                               = var.asg_key_name
     AsgMaxSize                               = var.asg_max_size
