@@ -11,7 +11,7 @@ terraform {
 resource "aws_cloudformation_stack" "oe_patterns_mastodon" {
   name = var.stack_name
 
-  template_url = "https://awsmp-cft-992382380361-1708727387563.s3.us-east-1.amazonaws.com/d7f9a3ad-774a-4938-b294-d3fb8cb4078c/d7f9a3ad-774a-4938-b294-d3fb8cb4078c/d0a98067-9a26-440a-858e-00193a953934/8d735b22-2789-4c78-b2e2-e426f6b93b40/template.yaml"
+  template_url = "https://awsmp-cft-211125678794-1707910187780.s3.us-east-1.amazonaws.com/cb0a096d-bf4c-49a2-9fdb-6b82d2a7d591/cb0a096d-bf4c-49a2-9fdb-6b82d2a7d591/template.yaml"
 
   capabilities = ["CAPABILITY_NAMED_IAM"]
 
