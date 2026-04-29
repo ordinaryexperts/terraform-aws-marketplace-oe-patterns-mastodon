@@ -12,7 +12,7 @@ run "provision_mastodon" {
   command = apply
 
   variables {
-    alb_certificate_arn = "arn:aws:acm:us-east-1:343218188409:certificate/ef859721-e16e-4fcd-9d10-8dfb188bd15a"
+    alb_certificate_arn = "arn:aws:acm:us-east-1:343218188409:certificate/187aa7df-4e38-4e24-892b-f0c87a5beb44"
     alb_ingress_cidr = "0.0.0.0/0"
     dns_hostname = "${run.setup_tests.stack_prefix}-mastodon-test.test.patterns.ordinaryexperts.com"
     dns_route53_hosted_zone_name = "test.patterns.ordinaryexperts.com"
