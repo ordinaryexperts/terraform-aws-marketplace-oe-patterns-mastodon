@@ -1,5 +1,9 @@
 # Unreleased
 
+# 2.4.0
+
+* Upgrading to OE Mastodon Pattern 2.4.0 (Mastodon version 4.5.9)
+
 # 2.3.0
 
 * Upgrading to OE Mastodon Pattern 2.3.0 (Mastodon version 4.5.1)
